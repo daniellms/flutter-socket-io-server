@@ -23,9 +23,20 @@
 
         socket.emit('mensaje', {nombre: 'Daniel'});  // aca es donde la aplicacion emite un msj para q lo escuche el servidor
         
-        socket.on('mensaje', function(payload){ //on, escucha un evento perzonalizado payload es el valor
+        // socket.on('mensaje', function(payload){ //on, escucha un evento perzonalizado payload es el valor
+        //     console.log('Escuchando: ', payload);
+        // } );
+
+        socket.on('emitir-mensaje', function(payload){ //on, escucha un evento perzonalizado payload es el valor
             console.log('Escuchando: ', payload);
         } );
+
+        socket.on('active-bands', function(bands){ //on, escucha un evento perzonalizado payload es el valor
+            console.clear();
+            console.table( bands);
+        } );    
+
+
     </script>
 
 </body>
